@@ -1,125 +1,50 @@
-#!/usr/bin/env python
-# coding: utf-8
+# # DataSet linha
+# f = open('tratamentos-de-arquivos/arquivos/salarios.csv', "r")
+# data  = f.read()
+# rows = data.split('\n')
+# print(rows)
 
-# ## Automatizando processo de Gravação
+# # DataSet em Colunas
 
-# In[ ]:
+# f = open('tratamentos-de-arquivos/arquivos/salarios.csv', "r")
+# data = f.read()
+# rows = data.split('\n')
+# full_data = []
 
-
-fileName = input('Digite o nome do aquivo ')
-
-
-# In[ ]:
-
-
-fileName = fileName + ".txt"
-
-
-# In[ ]:
-
-
-arql3 = open(fileName, "w")
+# for row in rows:
+#     split_row = row.split(',')
+#     full_data.append(split_row)
+# print(full_data)
 
 
-# In[ ]:
-
-
-arql3.write("Aquivo criado com sucesso")
-
-
-# In[ ]:
-
-
-arql3.close()
-
-
-# In[ ]:
-
-
-arql3 = open(fileName, 'r')
-
-
-# In[ ]:
-
-
-print(arql3.read())
-
-
-# In[ ]:
-
-
-arql3.close()
-
-
-# # Abrindo DataSet
-# ### link de dados:  https://data.cityofchicago.org/
-
-# In[30]:
-
-
+# Contando as linhas de um arquivo
 f = open('tratamentos-de-arquivos/arquivos/salarios.csv', "r")
-
-
-# In[31]:
-
-
 data = f.read()
-
-
-# In[32]:
-
-
 rows = data.split('\n')
-
-
-# In[33]:
-
-
-print(rows)
-
-
-# ### DataSet em Colunas
-
-# In[35]:
-
-
-f = open('tratamentos-de-arquivos/arquivos/salarios.csv', "r")
-
-
-# In[36]:
-
-
-data = f.read()
-
-
-# In[37]:
-
-
-rows = data.split('\n')
-
-
-# In[38]:
-
-
 full_data = []
-
-
-# In[40]:
-
 
 for row in rows:
     split_row = row.split(',')
     full_data.append(split_row)
+count = 0
+for row in full_data:
+    count += 1
+print("Quantidade de linhas: " + str(count))
 
 
-# In[41]:
+# Contando as Colunas de um arquivo
+f = open('tratamentos-de-arquivos/arquivos/salarios.csv', "r")
+data = f.read()
+rows = data.split('\n')
+full_data = []
 
+for row in rows:
+    split_row = row.split(',')
+    full_data.append(split_row)
+    first_row = full_data[0]
+count = 0
 
-print(full_data)
+for collumn in first_row:
+    count = count + 1
 
-
-# In[ ]:
-
-
-
-
+print("Quantidade de Colunas : " + str(count))
