@@ -9,7 +9,6 @@ class Livro():
         print('Foi criado o livro %s e ISBN %d' %(self.titulo, self.isbn))
 
 Livro1 = Livro()
-
 print(Livro1.titulo)
 
 
@@ -20,13 +19,15 @@ class Book():
         self.titulo = titulo
         self.isbn = isbn
         print('Construtor chamado para criar um objeto desta classe')
-    def imprimit(self, titulo, isbn):
+    def imprimir(self, titulo, isbn):
         print('Foi criado o livro %s e ISBN %d' %(titulo,isbn))
 
 Livro2 = Book('Ready Player One', 20000)
+Livro3 = Book('The Witcher', 30000)
 
 print(Livro2.titulo)
 print(Livro2.isbn)
+print(Livro3.titulo, Livro3.isbn)
 
 
 # Criando Classe Cachorro
@@ -40,3 +41,34 @@ Bob = Cachorro(raca = 'Huskie')
 
 print(Rex.raca, Bob.raca)
 
+
+
+
+#  Heroes
+
+class Heroes():
+    def __init__(self, comics, name, power, speed, intelligence, combat):
+        self.comics = comics
+        self.name = name
+        self.power = power
+        self.speed = speed
+        self.intelligence = intelligence
+        self.combat = combat
+        print('Construtor pata criação do Objeto.')
+HeroeMarvel = Heroes(comics="Mavel", power=1000, name = 'Spider Man', intelligence=100, combat=500, speed=50)
+HeroeDc = Heroes(comics="Dc", power="900", name="Batman", speed="200",intelligence=1500, combat=750)
+
+print('Name: ', HeroeMarvel.name)
+print('Comics: ',HeroeMarvel.comics)
+print('Power',HeroeMarvel.power)
+print('Intelligense: ',HeroeMarvel.intelligence)
+print('Speed: ',HeroeMarvel.speed)
+print('Compat: ',HeroeMarvel.combat)
+
+
+print('Name: ', HeroeDc.name)
+print('Comics: ',HeroeDc.comics)
+print('Power',HeroeDc.power)
+print('Intelligense: ',HeroeDc.intelligence)
+print('Speed: ',HeroeDc.speed)
+print('Compat: ',HeroeDc.combat)
